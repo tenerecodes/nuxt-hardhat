@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+   nuxt-hardhat:
+    build:
+      context: .
+    container_name:  nuxt-hardhat
+    ports:
+      - 3000:3000
+      - 8545:8545
+    restart: always
+    volumes:
+      - .:/usr/src/app
+      - ./node_modules:/usr/src/app/node_modules
+    networks:
+      frontend:
+        aliases:
+          - app
+
+networks:
+  frontend:
+    name:  nuxt-hardhat-network
