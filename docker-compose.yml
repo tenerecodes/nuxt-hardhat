@@ -12,6 +12,7 @@ services:
     volumes:
       - .:/usr/src/app
       - ./node_modules:/usr/src/app/node_modules
+      - ./artifacts:/usr/src/app/artifacts
     networks:
       frontend:
         aliases:
